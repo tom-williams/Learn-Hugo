@@ -1,0 +1,36 @@
+baseURL = "http://kelvin-williams.dk/"
+languageCode = "en-us"
+title = "Tom's Portfolio"
+theme = "basic"
+disqusShortname = "hugo-ubookit"
+
+pygmentsUseClasses = true
+
+Paginate = 10
+
+[params]
+    author = "Tom Williams"
+    description = "My portfolio site"
+
+    gh_url = "https://api.github.com/users"
+    gh_user = "tom-williams"
+
+[permalinks]
+    posts = "posts/:year/:month/:slug"
+    year = "posts/:slug"
+    month = "posts/:slug"
+
+[taxonomies]
+    year = "year"
+    month = "month"
+    tag = "tags"
+    category = "categories"
+
+[related]
+    includeNewer = false
+    threshold = 80
+    toLower = false
+
+[[related.indices]]
+    name = 'keywords'
+    weight = 100
