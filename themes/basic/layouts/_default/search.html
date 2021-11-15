@@ -1,0 +1,16 @@
+{{ define "main" }}
+    <h2>{{ .Title }}</h2>
+
+    <input type="search" id="searchField">
+    <button id="searchButton">Search</button>
+    <input type="checkbox" id="allwords">
+    <label for="allwords">Require all words</label>
+
+    <div id="output">
+        <p>Wating for search input</p>
+    </div>
+
+    <script src="//unpkg.com/lunr/lunr.js"></script>
+    <script src="//unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{{ "js/search.js" | relURL }}"></script>
+{{ end }}
