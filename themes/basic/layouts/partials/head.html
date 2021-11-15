@@ -24,6 +24,9 @@
         {{- end -}}
         {{ printf $link .Rel .MediaType.Type .Permalink $title | safeHTML }}
     {{- end }}
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}">
+    {{ $cssStyles := resources.Get "css/style.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $cssStyles.RelPermalink }}">
+
+    {{ $cssSyntax := resources.Get "css/syntax.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $cssSyntax.RelPermalink }}">
 </head>
