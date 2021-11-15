@@ -10,10 +10,6 @@
         <p>Wating for search input</p>
     </div>
 
-    {{ $lunr := resources.Get "js/lunr.js" }}
-    {{ $axios := resources.Get "js/axios.js" }}
-    {{ $search := resources.Get "js/search.js" }}
-    {{ $libs := slice $lunr $axios $search }}
-    {{ $js := $libs | resources.Concat "js/apps.js" | minify | fingerprint }}
+    {{ $js := resources.Get "js/apps.js" | minify | fingerprint }}
     <script src="{{ $js.RelPermalink }}"></script>
 {{ end }}
