@@ -24,6 +24,7 @@
         {{- end -}}
         {{ printf $link .Rel .MediaType.Type .Permalink $title | safeHTML }}
     {{- end }}
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     {{ $cssStyles := resources.Get "css/style.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $cssStyles.RelPermalink }}">
 
